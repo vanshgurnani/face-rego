@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Test route
-app.get("/test", (req, res) => {
+app.get("/", (req, res) => {
     console.log("Hello from the test route!");
     res.send("Hello from the test route!");
 });
