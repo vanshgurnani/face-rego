@@ -6,7 +6,10 @@ const { Canvas, Image, ImageData } = canvas;
 // Configure face-api.js to use canvas in Node.js
 faceapi.env.monkeyPatch({ Canvas, Image, ImageData });
 
-const MODELS_PATH = '../models';
+const path = require('path');
+const MODELS_PATH = path.join(__dirname, '../models');
+
+// const MODELS_PATH = '../models';
 
 // Load models needed for face detection and recognition
 async function loadModels() {

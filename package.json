@@ -29,6 +29,7 @@
     "openai": "^4.55.4",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
     "playwright": "^1.46.1",
     "playwright-aws-lambda": "^0.11.0",
     "razorpay": "^2.9.4",
