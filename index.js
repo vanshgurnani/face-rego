@@ -79,29 +79,34 @@ app.post("/api/compare-faces", upload.fields([{ name: 'image1' }]), async (req, 
     }
 });
 
-// to run and test locally
-if (process.env.DEVELOPMENT) {
-    const port = process.env.PORT || 3000;
-    app.listen(port, () => {
-        console.log(`Server is running on PORT: ${port}.`);
-    });
-}
-// to run over lambda
-module.exports.handler = async (event, context) => {
-    try {
-        const path = event.path || "";
-        console.log("[Lambda Handler] Requested Path -", path);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is running on PORT: ${port}.`);
+});
 
-        // Forward the request to the serverless app instance
-        return await serverless(app)(event, context);
+// // to run and test locally
+// if (process.env.DEVELOPMENT) {
+//     const port = process.env.PORT || 3000;
+//     app.listen(port, () => {
+//         console.log(`Server is running on PORT: ${port}.`);
+//     });
+// }
+// // to run over lambda
+// module.exports.handler = async (event, context) => {
+//     try {
+//         const path = event.path || "";
+//         console.log("[Lambda Handler] Requested Path -", path);
 
-    } catch (error) {
-        console.error(`Lambda Handler Error: ${JSON.stringify(error)}`);
-        return {
-            statusCode: 500,
-            body: JSON.stringify({
-                error: error?.message ? error.message : `Internal server error`,
-            }),
-        };
-    }
-};
+//         // Forward the request to the serverless app instance
+//         return await serverless(app)(event, context);
+
+//     } catch (error) {
+//         console.error(`Lambda Handler Error: ${JSON.stringify(error)}`);
+//         return {
+//             statusCode: 500,
+//             body: JSON.stringify({
+//                 error: error?.message ? error.message : `Internal server error`,
+//             }),
+//         };
+//     }
+// };
