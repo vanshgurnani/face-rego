@@ -1,0 +1,41 @@
+{
+    "CONSTANTS": {
+        "DATABASE_COLLECTIONS": {
+            "HR": "HR",
+            "USER": "USER",
+            "EMPLOYEE": "EMPLOYEE",
+            "ORGANISATION": "ORGANISATION",
+            "OTP": "otp",
+            "WORK_PATTERN": "work_pattern",
+            "DEPARTMENT": "department"
+        },
+        "STATUS": {
+            "ACTIVE": "ACTIVE",
+            "INACTIVE": "INACTIVE"
+        },
+        "ROLES": {
+            "USER": "USER",
+            "SUPER_ADMIN": "SUPER-ADMIN",
+            "HR": "HR"
+        },
+        "GENDER": {
+            "MALE": "MALE",
+            "FEMALE": "FEMALE",
+            "NOT_TO_PREFER": "NOT-TO-PREFER",
+            "OTHER": "OTHER"
+        },
+        "OTP_TYPE": {
+            "REGISTER": "REGISTER",
+            "PASSWORD_RESET": "PASSWORD_RESET",
+            "FORGOT_PASSWORD": "FORGOT_PASSWORD"
+        }
+    },
+    "JWT_SECRET": "reierjuoreitn",
+    "JWT_ACCESS_TOKEN_EXPIRY": "720h",
+    "OTP_LENGTH": 4,
+    "OTP_EXPIRES_IN_MINUTES": 5,
+    "DEFAULT_PAGINATION": {
+        "LIMIT": 50,
+        "PAGE": 1
+    }
+}
